@@ -502,9 +502,15 @@ public class MainActivity extends Fragment {
         });
 
         doneid = "";
-//        if (checkDay() == false || eventbus.suess.size() == 0) {
-//            new MyAsyncTask().execute("");
-//        }
+
+
+        dialog = new ProgressDialog(MainActivity.this.getContext());
+        dialog.setMessage("Loading Datas...");
+        dialog.setIndeterminate(true);
+        dialog.setCanceledOnTouchOutside(false);
+        if (checkDay() == false || eventbus.suess.size() == 0) {
+            new MyAsyncTask().execute("");
+        }
         return view;
     }
 
@@ -515,22 +521,25 @@ public class MainActivity extends Fragment {
 
     private void getRandomEntry(String tags, Boolean isSuess, int day_time) {
         if(isSuess) {
-            tags += ",sweet";
-//            query = query.where("fields.tags[in]", "sweet");
+            if (tags == "") {
+                tags += "sweet";
+            }else {
+                tags += ",sweet";
+            }
         }else {
-            tags += ",hearty";
-//            query = query.where("fields.tags[in]", "hearty");
+            if (tags == "") {
+                tags += "hearty";
+            }else {
+                tags += ",hearty";
+            }
         }
 
         if(day_time == 0) {
             tags += ",breakfast";
-//            query = query.where("fields.tags[in]", "breakfast");
         }else if(day_time == 1) {
             tags += ",lunch";
-//            query = query.where("fields.tags[in]", "lunch");
         }else {
             tags += ",dinner";
-//            query = query.where("fields.tags[in]", "dinner");
         }
         FetchQuery<CDAEntry> query = client.fetch(CDAEntry.class).where("content_type", "recipe");
         query = query.where("fields.tags[all]", tags);
@@ -589,11 +598,9 @@ public class MainActivity extends Fragment {
         String result = "";
 
         protected void onPreExecute() {
-            dialog = new ProgressDialog(MainActivity.this.getContext());
-            dialog.setMessage("Loading Datas...");
-            dialog.setIndeterminate(true);
-            dialog.setCanceledOnTouchOutside(false);
-            dialog.show();
+
+            if (dialog.isShowing() == false)
+                dialog.show();
         }
 
         @Override
@@ -612,9 +619,6 @@ public class MainActivity extends Fragment {
                 } else {
                     queryParams += ",vegetarian";
                 }
-//                query = query.where("fields.tags[in]", "vegetarian");
-//            }else {
-//                query = query.where("fields.tags[nin]", "vegetarian");
             }
 
             if(vegan) {
@@ -623,10 +627,6 @@ public class MainActivity extends Fragment {
                 } else {
                     queryParams += ",vegan";
                 }
-//                queryParams += ", vegan";
-//                query = query.where("fields.tags[in]", "vegan");
-//            }else {
-//                query = query.where("fields.tags[nin]", "vegan");
             }
 
             if(nuss) {
@@ -635,10 +635,6 @@ public class MainActivity extends Fragment {
                 } else {
                     queryParams += ",nuts";
                 }
-//                queryParams += ", nuts";
-//                query = query.where("fields.tags[in]", "nuts");
-//            }else {
-//                query = query.where("fields.tags[nin]", "nuts");
             }
 
             if(lactose) {
@@ -647,12 +643,7 @@ public class MainActivity extends Fragment {
                 } else {
                     queryParams += ",Lactose free";
                 }
-//                queryParams += ", Lactose free";
-//                query = query.where("fields.tags[in]", "Lactose free");
-//            } else {
-//                query = query.where("fields.tags[nin]", "Lactose free");
             }
-//            query = query.where("fields.tags[in]", queryParams);
             getRandomEntry(queryParams, true, 0);
             getRandomEntry(queryParams, true, 1);
             getRandomEntry(queryParams, true, 2);
@@ -688,9 +679,6 @@ public void safeClicked(int id){
     }else{
 
     }
-
-
-
 
     System.out.println("doneShit :" + doneShit);
 }
@@ -743,9 +731,9 @@ public void safeClicked(int id){
 
     public void onStart() {
         super.onStart();
-        if (checkDay() == false || eventbus.suess.size() == 0) {
-            new MyAsyncTask().execute("");
-        }
+//        if (checkDay() == false || eventbus.suess.size() == 0) {
+//            new MyAsyncTask().execute("");
+//        }
         EventBus.getDefault().register(this);
     }
 
@@ -756,6 +744,7 @@ public void safeClicked(int id){
     }
 
     public void onDestroy(){
+        dialog.dismiss();
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
