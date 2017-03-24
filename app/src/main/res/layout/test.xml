@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overall"
+    android:background="#000000"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/layout1"
+    android:background="@drawable/backgroundzubereitung"
+    android:orientation="horizontal"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="2x"
+                android:gravity="center"
+                android:id="@+id/txt_Zutat1Anzahl"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="#1a1a1a"
+                android:textSize="22dp"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="x"
+                android:gravity="center"
+                android:id="@+id/txt_Zutat1Anzahl2"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:padding="0dp"
+                android:layout_margin="0dp"
+                android:textColor="#1a1a1a"
+                android:textSize="22dp"
+                android:textAllCaps="true" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="CROISSANT"
+            android:gravity="center"
+            android:id="@+id/txt_Zutat1"
+            android:textColor="#D9000000"
+            android:textAllCaps="true"
+            android:padding="0dp"
+            android:layout_below="@+id/textView6"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:textSize="22dp" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/img_ZutatBild1"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp" />
+
+
+</LinearLayout>
+</LinearLayout>

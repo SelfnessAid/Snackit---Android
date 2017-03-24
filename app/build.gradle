@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        applicationId "com.snackit.android"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 15
+        versionName "0.1"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+
+    //Expantable layout --- https://android-arsenal.com/details/1/2456
+    compile 'com.github.aakira:expandable-layout:1.6.0@aar'
+
+    //datenbankabfragen
+    compile 'com.loopj.android:android-async-http:1.4.9'
+
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //bewertung
+
+    //Eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
+
+    compile 'com.google.firebase:firebase-core:9.6.1'
+    compile 'com.google.firebase:firebase-messaging:9.6.0'
+
+    //TextView animation
+    compile 'hanks.xyz:htextview-library:0.1.5'
+
+    //Sticky scroll view
+    compile 'se.emilsjolander:StickyScrollViewItems:1.1.0'
+
+    //action button floating
+    compile 'io.github.yavski:fab-speed-dial:1.0.6'
+
+    //SlidingTutorial
+    compile 'com.cleveroad:slidingtutorial:0.9'
+
+    //
+    compile 'com.google.android.gms:play-services-analytics:9.6.1'
+
+    compile 'com.contentful.java:java-sdk:7.4.0'
+    compile 'io.reactivex:rxandroid:0.23.0'
+
+    apt 'com.contentful.vault:compiler:0.9.9'
+    compile 'com.contentful.vault:core:0.9.9'
+}
+
+apply plugin: 'com.google.gms.google-services'
+

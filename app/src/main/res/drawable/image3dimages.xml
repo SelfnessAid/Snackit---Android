@@ -1,0 +1,26 @@
+<level-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:maxLevel="0" android:drawable="@drawable/bg01" />
+    <item android:maxLevel="1" android:drawable="@drawable/bg02" />
+    <item android:maxLevel="2" android:drawable="@drawable/bg03" />
+    <item android:maxLevel="3" android:drawable="@drawable/bg04" />
+    <item android:maxLevel="4" android:drawable="@drawable/bg05" />
+    <item android:maxLevel="5" android:drawable="@drawable/bg06" />
+    <item android:maxLevel="6" android:drawable="@drawable/bg07" />
+    <item android:maxLevel="7" android:drawable="@drawable/bg08" />
+    <item android:maxLevel="8" android:drawable="@drawable/bg09" />
+    <item android:maxLevel="9" android:drawable="@drawable/bg10" />
+    <item android:maxLevel="10" android:drawable="@drawable/bg11" />
+    <item android:maxLevel="11" android:drawable="@drawable/bg12" />
+    <item android:maxLevel="12" android:drawable="@drawable/bg13" />
+    <item android:maxLevel="13" android:drawable="@drawable/bg14" />
+    <item android:maxLevel="14" android:drawable="@drawable/bg15" />
+    <item android:maxLevel="15" android:drawable="@drawable/bg16" />
+    <item android:maxLevel="16" android:drawable="@drawable/bg17" />
+    <item android:maxLevel="17" android:drawable="@drawable/bg18" />
+    <item android:maxLevel="18" android:drawable="@drawable/bg19" />
+    <item android:maxLevel="19" android:drawable="@drawable/bg20" />
+    <item android:maxLevel="20" android:drawable="@drawable/bg21" />
+    <item android:maxLevel="21" android:drawable="@drawable/bg22" />
+    <item android:maxLevel="22" android:drawable="@drawable/bg23" />-->
+
+</level-list>

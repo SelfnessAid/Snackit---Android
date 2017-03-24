@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.snackit.android.SnackWeek"
+    android:background="#ebeded">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/relativeLayout"
+        android:background="@drawable/untere_leiste">
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/btn_back"
+            android:background="@drawable/btn_back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="25dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView15"
+            android:background="@drawable/mainmenu_line"
+            android:layout_below="@+id/btn_back"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/activity_leitfaden_heading"
+            android:id="@+id/textView10"
+            android:textColor="#121212"
+            android:layout_above="@+id/imageView15"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/relativeLayout2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/btn_profil"
+                android:background="@drawable/question_icon_clicked"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="10dp" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/btn_uns"
+                android:background="@drawable/btn_ueber"
+                android:layout_above="@+id/textView11"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/btn_mehr"
+                android:background="@drawable/btn_agb"
+                android:layout_marginLeft="51dp"
+                android:layout_marginStart="51dp"
+                android:layout_above="@+id/textView11"
+                android:layout_toRightOf="@+id/textView12"
+                android:layout_toEndOf="@+id/textView12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="FAQ"
+                android:id="@+id/textView11"
+                android:textColor="#2b2b2b"
+                android:layout_marginTop="11dp"
+                android:textSize="13dp"
+                android:layout_below="@+id/btn_profil"
+                android:layout_alignRight="@+id/btn_profil"
+                android:layout_alignEnd="@+id/btn_profil"
+                android:layout_marginRight="9dp"
+                android:layout_marginEnd="9dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activity_btn_ueberuns"
+                android:id="@+id/textView12"
+                android:textColor="#2b2b2b"
+                android:layout_alignBottom="@+id/textView11"
+                android:layout_centerHorizontal="true"
+                android:textSize="13dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activity_btn_mehr"
+                android:id="@+id/textView13"
+                android:textColor="#2b2b2b"
+                android:textSize="13dp"
+                android:layout_alignTop="@+id/textView12"
+                android:layout_alignRight="@+id/btn_mehr"
+                android:layout_alignEnd="@+id/btn_mehr" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layout_profil"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/backgroundzubereitung"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout2" >
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView14"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Was ist SNACkit?"
+                android:id="@+id/textView21"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="SNACkit ist eine Food-App die genau zu deinem Leben passt: leckere, einfache und schnelle Snack-Rezepte. Vertrauen, statt einer endlosen Auswahl: zwei Snacks, passend zu deinem Appetit - jeden Tag neu. Mit maximal fünf Zutaten, die du in jedem Supermarkt bekommst."
+                android:id="@+id/textView26"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView144"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Wie funktioniert SNACkit?"
+                android:id="@+id/textView24"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Jeden Tag bekommst du zwei neue Snacks vorgeschlagen - abhängig von der Uhrzeit und deinem Appetit. Wenn du keine Nüsse, Milch oder Fleisch magst - sag es SNACkit einfach. Und entdecke stattdessen eine Vielfalt nach deinen Vorlieben - Iss nur das, was gut für dich ist."
+                android:id="@+id/textView27"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView1442"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Ist SNACkit kostenlos?"
+                android:id="@+id/textView224"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ja, du musst weder für die App, noch für die Rezepte oder für unseren Support etwas zahlen."
+                android:id="@+id/textView2s7"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView21442"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Hat SNACkit keine Einkaufsliste?"
+                android:id="@+id/textView2s24"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Dein Snack ist deine Einkaufsliste. Einfacher geht es nicht."
+                android:id="@+id/textView2ss7"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView212442"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Bietet ihr auch vegetarische Snacks an?"
+                android:id="@+id/textView2s224"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Melanie, unsere Food-Expertin, kreiert ständig neue, leckere Snacks, die wir euch in unserer App zeigen. Es ist uns ein Anliegen, einen guten Mix aus vegetarischen, Fisch- und Fleischgerichten anzubieten. So ist für jeden etwas Leckers dabei. Du willst nur vegetarische Snacks? Dann stell in deinem Profil genau das ein."
+                android:id="@+id/textView22ss7"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView2124422"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Warum stehen keine Nährwert-Angaben an den Snacks?"
+                android:id="@+id/textView2s2224"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Wenn du Musik hörst, denkst du an Akkorde, Noten oder Instrumente? Oder genießt du einfach das Gesamtwerk? Warum sollten wir uns dieses Erlebnis beim Essen kaputt machen, indem wir es in Fette, Kalorien oder Kohlenhydrate zerlegen? Essen ist Genuss - und keine Wissenschaft."
+                android:id="@+id/textView22ss27"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+            <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView21244222"
+            android:background="@drawable/mainmenu_line"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Benötige ich noch zusätzliche Zutaten?"
+                android:id="@+id/textView2s22245"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Nein. Zu jedem Snack geben wir genau an, welche Zutaten und auch Küchengeräte notwendig sind. Du willst den Extra-Geschmacks-Kick? Dann bestell unsere empfohlenen Gewürze. Du wirst sie lieben."
+                android:id="@+id/textView22ss273"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+            <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView212442224"
+            android:background="@drawable/mainmenu_line"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Woher bekomme ich die Zutaten von SNACkit?"
+                android:id="@+id/textView2s22245s"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Wir wollen es einfach halten: du bekommst alle Zutaten im nächsten Supermarkt. So snackt man heute!"
+                android:id="@+id/textView22ss27s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView212442224s"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Wie kann ich einen Snack in der SnackWoche speichern?"
+                android:id="@+id/textView2s22245ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Klicke einfach am Ende eines Snacks auf „Lecker“ und der Snack steht dir weitere 7 Tage in der SnackWoche zur Verfügung."
+                android:id="@+id/textView22ss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView212s442224s"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Kann ich in der App auch ein Rezept eingeben?"
+                android:id="@+id/textView2s222s45ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Super, dass du uns an einem Rezept teilhaben lassen möchtest. Derzeit ist es noch nicht möglich, ein Rezept über die App hochzuladen. Bitte schicke uns daher eine Mail mit deinem Rezept an recipe@snackit-app.com"
+                android:id="@+id/textView22sss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+            <ImageView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageVisew212s442224s"
+            android:background="@drawable/mainmenu_line"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Wie regelmäßig finden Updates statt?"
+                android:id="@+id/textView2ss222s45ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Es gibt regelmäßige Updates für SNACkit. Es gibt häufig kleinere Releases, mit denen Verbesserungen umgesetzt und Probleme behoben werden. Größere Updates sind seltener und enthalten zumeist neue Features, die aus den Anregungen der Community entstehen."
+                android:id="@+id/tsextView22sss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageVsisew212s442224s"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Wie kann ich ein Rezept bewerten?"
+                android:id="@+id/textView2ss2s22s45ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Derzeit ist es noch nicht möglich, Rezepte zu bewerten. Wir arbeiten aber daran. Wenn du weitere Ideen für SNACkit hast, schicke uns eine Mail mit deinen Vorschlägen an feature@snackit-app.com"
+                android:id="@+id/tsextsView22sss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageVsissew212s442224s"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Welche Möglichkeit habe ich, um ein Rezept zu suchen?"
+                android:id="@+id/textView2ss2s2s2s45ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Vertrauen, statt einer endlosen Auswahl - dafür steht SNACkit. Wir möchten, dass du jeden Tag etwas Neues entdeckst. Daher arbeiten wir lieber an immer neuen Snacks, statt dich immer wieder das selbe finden zu lassen. Dir hat ein Snack besonders gut geschmeckt? Markiere ihn als „Lecker“ und du wirst ihn für 7 Tage in deiner SnackWoche finden."
+                android:id="@+id/tssextsView22sss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000" />
+
+
+
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageVsisssew212s442224s"
+                android:background="@drawable/mainmenu_line"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Wie kann ich euch erreichen?"
+                android:id="@+id/textView2sss2s2s2s45ss"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="75dp"
+                android:layout_marginRight="75dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Ganz einfach: schreibe eine Mail an fragen@snackit-app.com"
+                android:id="@+id/tssextsView22ssss2s7s3"
+                android:layout_alignTop="@+id/layout_profil"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#d9000000"
+                android:layout_marginBottom="50dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layout_mehr"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/backgroundzubereitung"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Copyright 2016 \n\n Impressum \n\n Orange Trees UG (haftungsbeschränkt)\n Friedrichstraße 123 \n 10117 Berlin \n\n Eingetragen beim Amtsgericht Charlottenburg (HRB 179648 B) \n Vertreten durch den Geschäftsführer:\n Christian Luber  \n\n Kontakt: \n E-Mail: info@snackit-app.com \n Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:  Christian Luber (Adresse s.o.) \n Urheberrecht: \n Der Inhalt der SNACkit App und der Website www.snackit-app.com sind urheberrechtlich geschützt. Aus Gründen des Urheberrechts ist die Speicherung und die Vervielfältigung von Bildmaterial oder Grafiken aus dieser App oder Website für kommerzielle Zwecke nicht gestattet.  Besonderer Dank gebührt Melanie Eberlein und Guido Bröge."
+                android:id="@+id/textView28"
+                android:textColor="#d2000000" />
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/layout_ueberuns"
+        android:layout_marginTop="200dp"
+        android:visibility="gone"
+        android:background="@drawable/backgroundzubereitung">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView19"
+                android:background="@drawable/snackit_info"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activity_wieso_heading"
+                android:id="@+id/textView15"
+                android:layout_gravity="center_horizontal"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/activity_wieso_text"
+                android:id="@+id/textView14"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView20"
+                android:background="@drawable/gestern_info"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/activity_wieso_text2"
+                android:id="@+id/textView19"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView21"
+                android:background="@drawable/heute_info"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/activity_wieso_text3"
+                android:id="@+id/textView18"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView22"
+                android:background="@drawable/morgen_info"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/activity_wieso_text4"
+                android:id="@+id/textView20"
+                android:layout_below="@+id/relativeLayout2"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000000"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="60dp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

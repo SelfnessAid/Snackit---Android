@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:htext="http://schemas.android.com/apk/res-auto"
+    tools:context="com.snackit.android.MainActivity"
+    android:background="@drawable/background"
+    android:id="@+id/relBackground">
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/img_mittag"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/mittags_selected"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/img_morgens"
+        android:background="@drawable/morgens"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignTop="@+id/img_mittag"
+        android:layout_toLeftOf="@+id/img_mittag"
+        android:layout_toStartOf="@+id/img_mittag"
+        android:layout_marginTop="0dp"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/img_abend"
+        android:background="@drawable/abends"
+        android:layout_alignTop="@+id/img_mittag"
+        android:layout_toRightOf="@+id/img_mittag"
+        android:layout_toEndOf="@+id/img_mittag"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="30dp"
+        android:visibility="invisible" />
+
+    <com.hanks.htextview.HTextView
+        xmlns:htext="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/activity_main_tageszeit"
+        android:id="@+id/txt_begruesung"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
+        android:textSize="28dp"
+        android:layout_below="@+id/img_mittag"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textColor="#c8000000"
+        htext:animateType="evaporate"
+        />
+
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="5dp"
+        android:id="@+id/imageView5"
+        android:background="@drawable/mainmenu_line"
+        android:layout_below="@+id/txt_begruesung"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/activity_main_lust"
+        android:id="@+id/textView2"
+        android:textColor="#c8000000"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="62dp"
+        android:id="@+id/btn_suess"
+        android:background="@drawable/btn_suess_clicked"
+        android:layout_marginTop="69dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="O D E R"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/btn_suess"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="#89000000"
+        android:textSize="10dp" />
+
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="62dp"
+        android:id="@+id/btn_herzhaft"
+        android:background="@drawable/btn_herzhaft_clicked"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/btn_suess"
+        android:layout_alignStart="@+id/btn_suess" />
+
+    <!--<ImageView
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:id="@+id/btn_suess_home"
+        android:background="@drawable/btn_athome"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:id="@+id/btn_herzhaft_home"
+        android:background="@drawable/btn_athome"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:id="@+id/btn_suess_togo"
+        android:background="@drawable/btn_togo"
+        android:layout_alignBottom="@+id/btn_suess_home"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="100dp"
+        android:id="@+id/btn_herzhaft_togo"
+        android:background="@drawable/btn_togo"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />-->
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/translucent"
+        android:layout_toStartOf="@+id/img_morgens"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:background="#42000000" />
+
+    <io.github.yavski.fabspeeddial.FabSpeedDial
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:id="@+id/fab_action"
+        app:fabGravity="bottom_end"
+        app:fabMenu="@menu/menu"
+        app:fabDrawable="@drawable/btn_fab"
+        app:fabDrawableTint="@android:color/black"
+        android:src="@color/colorFab"
+        app:fabBackgroundTint="@color/colorFab"
+        app:miniFabBackgroundTint="@color/colorFab"
+        app:miniFabDrawableTint="@android:color/black"
+        app:miniFabTitleTextColor="@android:color/black"
+        app:touchGuardDrawable="@color/colorFabBackground"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp" />
+
+</RelativeLayout>

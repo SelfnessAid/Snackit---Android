@@ -1,0 +1,47 @@
+<resources>
+    <!-- activity leitfaden -->
+    <string name="app_name">SNACkit</string>
+
+    <string name="activity_leitfaden_heading">LEITFADEN</string>
+    <string name="activity_btn_profil">PROFIL</string>
+    <string name="activity_btn_ueberuns">ÜBER UNS</string>
+    <string name="activity_btn_mehr">MEHR</string>
+
+    <string name="activity_wieso_heading">Warum es SNACkit gibt</string>
+    <string name="activity_wieso_text">Was das Essen angeht, sind wir heute umzingelt von Erziehungsmaßnahmen: Reduziere die Kohlenhydrate! Lass Fettes weg! Iss wenig Fleisch oder am besten gleich nur vegan! Längst ist Essen zu einem Krampf, Disziplin und Selbstkasteiung verkommen. Dabei wird häufig vernachlässigt, dass unser Wohlbefinden keine Frage von Kalorien, Fetten, Fleisch oder Gemüse ist - sondern von unserer Hungerstimmung gesteuert wird. Was wäre nun, wenn Hungerstimmung und leckere, gesunde Rezepte kombiniert würden...</string>
+    <string name="activity_wieso_text2">1933 wurden zwei Frauen geboren. Die eine, Lehrerin auf dem Land, aß einfach und ging viel zu Fuß. Die andere, Hausfrau in der Stadt, hatte eine große Auswahl an Zutaten, aber zu wenig Bewegung für die Überfluss-Ernährung. Heute, nach über 80 Jahren, ist die Lehrerin eine vitale, ältere Dame, die im eigenen Haus wohnt und täglich noch immer viele Kilometer läuft. Die Hausfrau leidet unter Übergewicht, Diabetes und Gedächtnisproblemen. Sie lebt in einem Haus für betreutes Wohnen. Woher wir das wissen? Die beiden Frauen sind die Großmütter Christians, einem der Gründer von SNACkit.  </string>
+    <string name="activity_wieso_text3">Vele Jahre später, in Berlin, beschlossen vier Essenliebhaber - müde von tausenden Rezepten, die doch niemand zubereitet - einfache und leckere Snacks für Menschen zu kreieren, die den schnellen, gesunden Geschmack genauso suchen, wie wir selbst.  Dabei waren drei Dinge wichtig: Wir wollen nur Rezepte verwenden, die einfach zu zubereiten sind - selbst unterwegs. Wir wollen nur Zutaten verwenden, die es in jedem Supermarkt gibt. Und wir wollen nur Snacks vorschlagen, welche dem Körper auch über Jahre nicht schaden. Wer wir sind? Andreas, Christian, Dominik und Tobias.</string>
+    <string name="activity_wieso_text4">Wir möchten einfach essen. Nicht darüber nachdenken. Wir möchten, dass gerade Kinder ärmer Eltern die Chance bekommen, die selben Werte zu erfahren, wie wir einst selbst. Wir möchten, das sie ein Verständnis dafür entwickeln, was dem Körper schadet - und was nicht. Wir hoffen auf die Unterstützung von vielen, begeisterten Menschen, die das gleiche Ziel haben und nach und nach sich mehr für unsere Idee begeistern. Und in vielen Jahren, wenn wir zurück blicken, wollen wir sagen können: Ja, es war die Mühe wert. Wir haben das Leben vieler Menschen verbessert. Wir haben etwas bewegt. </string>
+
+    <string name="activity_nein_vorliebe">Vorliebe</string>
+    <string name="activity_nein_heading">MEINE SNACKS SOLLEN SEIN</string>
+    <string name="activity_nein_lactose">LAKTOSEFREI</string>
+    <string name="activity_nein_nuss">NUSS FREI</string>
+    <string name="activity_nein_vegetarisch">VEGETARISCH</string>
+    <string name="activity_nein_vegan">VEGAN</string>
+
+
+    <!-- activity togo -->
+    <string name="activity_togo_brauch">DU BRAUCHST</string>
+    <string name="activity_togo_sogehts">SO GEHTS</string>
+    <string name="activity_togo_like">LECKER!</string>
+
+    <!-- activity main -->
+    <string name="activity_main_tageszeit">GUTEN TAG</string>
+    <string name="activity_main_lust">Worauf hast du lust?</string>
+    <string name="activity_main_oder">oder</string>
+    <string name="activity_main_btn_woche">SNACK WOCHE</string>
+    <string name="activity_main_btn_leitfaden">LEITFADEN</string>
+    <string name="activity_main_btn_bewerten">BEWERTEN</string>
+
+    <!-- activity snackweek -->
+    <string name="activity_snackweek_heading">SNACK WOCHE</string>
+
+    <string name="activity_faq_frage">[FRAGE]</string>
+
+    <!-- CDA Space ID and Token -->
+    <string name="CDA_space">qof8w6vkl8u7</string>
+    <string name="CDA_delivery_token">4fa70fdc274c1742b60aea7dff60f6f61db5033290e728c9363023e4adcbfad5</string>
+    <string name="CDA_preview_token">2c8a98528df8addf83d4d95fc2c3927d2f09a3ada51df55a480a318b63fa323e</string>
+
+</resources>

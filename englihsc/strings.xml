@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- activity leitfaden -->
+    <string name="activity_leitfaden_heading">GUIDE</string>
+    <string name="activity_btn_profil">PROFILE</string>
+    <string name="activity_btn_ueberuns">ABOUT US</string>
+    <string name="activity_btn_mehr">MORE</string>
+
+    <string name="activity_wieso_text">We are today surrounded by rules: Reduce carbohydrates! Leave fat off! Eat meat like a bird - or not at all. Food has already become discipline and self-torture. Thereby we neglect the fact that our well-being is not a question of calories, fats, meat or vegetables - but is controlled by our appetite. Experience SNACkit now. Delicious, healthy snacks - suitable to your appetite.</string>
+    <string name="activity_wieso_text2">In 1933 two women were born. One, a teacher in the country, simply ate and walked a lot. The other, housewife in the city, had a wide range of ingredients, but too little knowledge about the abundance food.<br></br> Today, more than 80 years, the teacher is a vital, elderly lady who lives in her own house and still walks many kilometers a day. The housewife suffers from overweight, diabetes and memory problems. She lives in a house for assisted living.>br>How do we know? The two women are the grandmothers of Christian, one of the founder of SNACkit.</string>
+    <string name="activity_wieso_text3">Many years later, in Berlin, four food lovers - tired of thousands of recipes, which no one has ever prepared - decided to create simple and tasty snacks for people who are looking for the fast, healthy taste as much as we ourselves. Thereby three things were important: We only want to use recipes that are easy to prepare - even for to go. We only want to use ingredients that are available in every supermarket. And we only want to propose snacks, which do not harm the body for years. Who we are? Andreas, Christian, Dominik and Tobias.</string>
+    <string name="activity_wieso_text4">We just want to eat. Do not think about it. We look forward to the support of many, enthusiastic people who have the same goal and are gradually becoming more enthusiastic about our idea. And in many years, when we look back, we can say: Yes, it was worth the effort. We have improved the lives of many people.<br></br><br></br>We made a difference.</string>
+
+    <string name="activity_nein_vorliebe">Preferences</string>
+    <string name="activity_nein_heading">MY SNACKS SHOULD BE</string>
+    <string name="activity_nein_lactose">LACTOSE FREE</string>
+    <string name="activity_nein_nuss">NUT FREE</string>
+    <string name="activity_nein_vegetarisch">VEGETARIAN</string>
+    <string name="activity_nein_vegan">VEGAN</string>
+
+
+    <!-- activity togo -->
+    <string name="activity_togo_brauch">YOU NEED</string>
+    <string name="activity_togo_sogehts">THIS IS HOW</string>
+    <string name="activity_togo_like">YUMMY!</string>
+
+    <!-- activity main -->
+    <string name="activity_main_tageszeit">LUNCH TIME</string>
+    <string name="activity_main_lust">What is your appetite for?</string>
+    <string name="activity_main_oder">or</string>
+    <string name="activity_main_btn_woche">SNACK WEEK</string>
+    <string name="activity_main_btn_leitfaden">GUIDE</string>
+    <string name="activity_main_btn_bewerten">RATE</string>
+
+    <!-- activity snackweek -->
+    <string name="activity_snackweek_heading">SNACK WEEK</string>
+
+</resources>
