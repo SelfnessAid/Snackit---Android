@@ -74,7 +74,6 @@ public class ActivityProfil extends AppCompatActivity {
                 }else{
                     btn_lactose.setBackgroundResource(R.drawable.btn_selecte);
                     prefss.edit().putBoolean("lactose",true).apply();
-
                     lactose = true;
                 }
             }

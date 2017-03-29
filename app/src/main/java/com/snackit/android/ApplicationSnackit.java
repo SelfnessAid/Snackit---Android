@@ -166,7 +166,7 @@ public class ApplicationSnackit extends Application {
         resultGson = new GsonBuilder().setPrettyPrinting().create();
 
         // do stuff (prefs, etc)
-        getDatasfromContentful();
+//        getDatasfromContentful();
 
 
         String Language = Locale.getDefault().getLanguage();

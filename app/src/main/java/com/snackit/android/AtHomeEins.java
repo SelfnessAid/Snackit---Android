@@ -314,7 +314,7 @@ public class AtHomeEins extends Fragment {
         txt_name.setText(getLastString(title));
 
         //Set Main Image of Hearty
-        CDAAsset image = entry.getField("image");
+        CDAAsset image = (CDAAsset) entry.getField("image");
         String image_url = "http:" + image.url();
         Glide.with(getActivity()).load(image_url).into(img_bild);
 
@@ -516,8 +516,8 @@ public class AtHomeEins extends Fragment {
     @Subscribe
     public void onMessageEvent(EventTest event) {
         initialize(event.herzhaft.get((event.daytime-1)*2+1));
-
     }
+
     public void onStart() {
         super.onStart();
         EventBus.getDefault().register(this);

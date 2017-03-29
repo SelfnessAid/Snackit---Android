@@ -1,4 +1,4 @@
-package com.snackit.android.snackit.Model;
+package com.snackit.android.Model;
 
 @com.contentful.vault.Space(
         value = "qof8w6vkl8u7",

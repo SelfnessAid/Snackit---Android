@@ -29,6 +29,8 @@ import com.contentful.java.cda.CDAArray;
 import com.contentful.java.cda.CDAClient;
 import com.contentful.java.cda.CDAEntry;
 import com.contentful.java.cda.FetchQuery;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.hanks.htextview.HTextView;
 import com.hanks.htextview.HTextViewType;
 
@@ -77,8 +79,11 @@ public class MainActivity extends Fragment {
     public ArrayList<Boolean> s2 = new ArrayList<Boolean>();
     public ArrayList<Boolean> h1 = new ArrayList<Boolean>();
     public ArrayList<Boolean> h2 = new ArrayList<Boolean>();
+    ArrayList<String> suessIDs = new ArrayList<String>();
+    ArrayList<String> herzhaftIDs = new ArrayList<String>();
 
     boolean vegetarisch,nuss,vegan,lactose;
+    boolean vegetarisch1,nuss1,vegan1,lactose1;
 
     Typeface displayBold,displayMedium,displayThin,displayTitling;
 
@@ -127,6 +132,7 @@ public class MainActivity extends Fragment {
         dialog.setMessage("Loading Datas...");
         dialog.setIndeterminate(true);
 
+        clearArrays();
 
         for(int i = 0; i <= 3; i++){
             s1.add(i,false);
@@ -202,8 +208,12 @@ public class MainActivity extends Fragment {
         vegan = pref.getBoolean("vegan",false);
         lactose = pref.getBoolean("lactose",false);
 
-        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        vegetarisch1 = pref.getBoolean("vegetarisch1",false);
+        nuss1 = pref.getBoolean("nuss1",false);
+        vegan1 = pref.getBoolean("vegan1",false);
+        lactose1 = pref.getBoolean("lactose1",false);
 
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
 
         txt_begruesung.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -219,7 +229,6 @@ public class MainActivity extends Fragment {
                         float deltaX = x2 - x1;
                         if (Math.abs(deltaX) > MIN_DISTANCE)
                         {
-
                             // Left to Right swipe action
                             if (x2 > x1)
                             {
@@ -232,8 +241,6 @@ public class MainActivity extends Fragment {
 
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",2).apply();
-
-
                                     break;
                                 }
                                 if(txt_begruesung.getText().toString().equals("LUNCH")){
@@ -246,7 +253,6 @@ public class MainActivity extends Fragment {
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",3).apply();
                                     break;
-
                                 }
                                 if(txt_begruesung.getText().toString().equals("DINNER")){
                                     txt_begruesung.setAnimateType(HTextViewType.EVAPORATE);
@@ -258,7 +264,6 @@ public class MainActivity extends Fragment {
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",1).apply();
                                     break;
-
                                 }
                             }
 
@@ -275,7 +280,6 @@ public class MainActivity extends Fragment {
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",3).apply();
                                     break;
-
                                 }
                                 if(txt_begruesung.getText().toString().equals("LUNCH")){
                                     txt_begruesung.setAnimateType(HTextViewType.EVAPORATE);
@@ -287,7 +291,6 @@ public class MainActivity extends Fragment {
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",1).apply();
                                     break;
-
                                 }
                                 if(txt_begruesung.getText().toString().equals("DINNER")){
                                     txt_begruesung.setAnimateType(HTextViewType.EVAPORATE);
@@ -299,7 +302,6 @@ public class MainActivity extends Fragment {
                                     SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
                                     prefss.edit().putInt("zeit",2).apply();
                                     break;
-
                                 }
                             }
                         }
@@ -353,7 +355,6 @@ public class MainActivity extends Fragment {
             SharedPreferences prefss = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
             prefss.edit().putInt("zeit",3).apply();
         }
-
 
         img_morgens.setOnClickListener(new View.OnClickListener() {
 
@@ -437,7 +438,6 @@ public class MainActivity extends Fragment {
             }
         });
 
-
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         final float width = display.getWidth();
 
@@ -445,7 +445,6 @@ public class MainActivity extends Fragment {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int iAction=event.getAction();
-
                 if(iAction==0){
                     btn_suess.setBackground(getResources().getDrawable(R.drawable.btn_suess_clicked_zwei));
                 }
@@ -456,12 +455,10 @@ public class MainActivity extends Fragment {
             }
         });
 
-
         btn_herzhaft.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 int iAction=event.getAction();
-
                 if(iAction==0){
                     btn_herzhaft.setBackground(getResources().getDrawable(R.drawable.btn_herzhaft_clicked_zwei));
                 }
@@ -472,14 +469,11 @@ public class MainActivity extends Fragment {
             }
         });
 
-
         btn_suess.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
                 if(checkIf()){
                     vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
                     vp.setCurrentItem(3);
-
                 }else{
                     EventBus.getDefault().post(eventbus);
                     vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
@@ -489,37 +483,84 @@ public class MainActivity extends Fragment {
         });
 
         btn_herzhaft.setOnClickListener(new View.OnClickListener() {
-
             public void onClick(View v) {
-
-                    if(checkIf()){
-                        EventBus.getDefault().post(eventbus);
-
-                        vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
-                        vp.setCurrentItem(0);
-
-                    }else {
-
-                        vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
-                        vp.setCurrentItem(0);
-                    }
-
+                if(checkIf()){
+                    EventBus.getDefault().post(eventbus);
+                    vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
+                    vp.setCurrentItem(0);
+                }else {
+                    vp.setAllowedSwipeDirection(CustomPager.SwipeDirection.all);
+                    vp.setCurrentItem(0);
+                }
             }
         });
 
         doneid = "";
-
-
-        dialog = new ProgressDialog(MainActivity.this.getContext());
-        dialog.setMessage("Loading Datas...");
-        dialog.setIndeterminate(true);
-        dialog.setCanceledOnTouchOutside(false);
-        if (checkDay() == false || eventbus.suess.size() == 0) {
+        if (updateSetting() == true) {
+            new MyAsyncTask().execute("");
+        } else if (checkDay() == false || hasDatas() == false) {
             new MyAsyncTask().execute("");
         }
+
         return view;
     }
 
+    private boolean updateSetting() {
+        SharedPreferences pref = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
+        if (nuss != nuss1) {
+            pref.edit().putBoolean("nuss1",nuss).apply();
+            pref.edit().putBoolean("vegan1",vegan).apply();
+            pref.edit().putBoolean("vegetarisch1",vegetarisch).apply();
+            pref.edit().putBoolean("lactose1",lactose).apply();
+            return true;
+        }
+
+        if (vegan != vegan1) {
+            pref.edit().putBoolean("nuss1",nuss).apply();
+            pref.edit().putBoolean("vegan1",vegan).apply();
+            pref.edit().putBoolean("vegetarisch1",vegetarisch).apply();
+            pref.edit().putBoolean("lactose1",lactose).apply();
+            return true;
+        }
+
+        if (vegetarisch != vegetarisch1) {
+            pref.edit().putBoolean("nuss1",nuss).apply();
+            pref.edit().putBoolean("vegan1",vegan).apply();
+            pref.edit().putBoolean("vegetarisch1",vegetarisch).apply();
+            pref.edit().putBoolean("lactose1",lactose).apply();
+            return true;
+        }
+
+        if (lactose != lactose1) {
+            pref.edit().putBoolean("nuss1",nuss).apply();
+            pref.edit().putBoolean("vegan1",vegan).apply();
+            pref.edit().putBoolean("vegetarisch1",vegetarisch).apply();
+            pref.edit().putBoolean("lactose1",lactose).apply();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean hasDatas() {
+        SharedPreferences prefs = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String empty_list = gson.toJson(new ArrayList<String>());
+        suessIDs = gson.fromJson(prefs.getString("suess_array", empty_list),
+                new TypeToken<ArrayList<String>>() {
+                }.getType());
+        if (suessIDs.size() == 0)
+            return false;
+
+        herzhaftIDs = gson.fromJson(prefs.getString("herzhaft_array", empty_list),
+                new TypeToken<ArrayList<String>>() {
+                }.getType());
+
+        if (herzhaftIDs.size() == 0)
+            return false;
+
+        new LoadExistRecipesAsyncTask().execute("");
+        return true;
+    }
 
     public void getRezeptePicked(int pick1,int pick2, int tageszeit){
 
@@ -552,6 +593,8 @@ public class MainActivity extends Fragment {
         CDAArray entries = query.all();
 
         int entries_num = entries.total();
+        if (entries_num == 0)
+            return;
         for(int i=0; i<2; i++) {
             final int r = new Random().nextInt(entries_num);
             CDAEntry random_entry = (CDAEntry) entries.items().get(r);
@@ -584,6 +627,25 @@ public class MainActivity extends Fragment {
         }
     }
 
+    private void saveEntryIDs() {
+        SharedPreferences pref = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
+        for (int i=0; i<eventbus.suess.size();i++){
+            CDAEntry entry = eventbus.suess.get(i);
+            suessIDs.add(entry.id());
+        }
+
+        Gson gson = new Gson();
+        String suess_array = gson.toJson(suessIDs);
+        pref.edit().putString("suess_array", suess_array).apply();
+
+        for (int i=0; i<eventbus.herzhaft.size();i++){
+            CDAEntry entry = eventbus.herzhaft.get(i);
+            herzhaftIDs.add(entry.id());
+        }
+
+        String herzhaft_array = gson.toJson(herzhaftIDs);
+        pref.edit().putString("herzhaft_array", herzhaft_array).apply();
+    }
 
     public Boolean checkDay(){
         Calendar c = Calendar.getInstance();
@@ -604,14 +666,17 @@ public class MainActivity extends Fragment {
         String result = "";
 
         protected void onPreExecute() {
-
+            dialog = new ProgressDialog(MainActivity.this.getContext());
+            dialog.setMessage("Loading Datas...");
+            dialog.setIndeterminate(true);
+            dialog.setCanceledOnTouchOutside(false);
             if (dialog.isShowing() == false)
                 dialog.show();
         }
 
         @Override
         protected String doInBackground(String... params) {
-            final SharedPreferences pref = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
+            SharedPreferences pref = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
             vegetarisch = pref.getBoolean("vegetarisch",false);
             nuss = pref.getBoolean("nuss",false);
             vegan = pref.getBoolean("vegan",false);
@@ -657,6 +722,8 @@ public class MainActivity extends Fragment {
             getRandomEntry(queryParams, false, 1);
             getRandomEntry(queryParams, false, 2);
 
+            saveEntryIDs();
+
             return result;
         }
 
@@ -665,56 +732,78 @@ public class MainActivity extends Fragment {
         }
     }
 
+    class LoadExistRecipesAsyncTask extends AsyncTask<String, String, String> {
+
+        InputStream inputStream = null;
+        String result = "";
+
+        protected void onPreExecute() {
+            dialog = new ProgressDialog(MainActivity.this.getContext());
+            dialog.setMessage("Loading Datas...");
+            dialog.setIndeterminate(true);
+            dialog.setCanceledOnTouchOutside(false);
+            if (dialog.isShowing() == false)
+                dialog.show();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            FetchQuery<CDAEntry> query = client.fetch(CDAEntry.class).where("content_type", "recipe");
+
+            for (int i=0; i<herzhaftIDs.size(); i++) {
+                CDAEntry entry = query.one(suessIDs.get(i));
+                eventbus.suess.add(entry);
+                entry = query.one(herzhaftIDs.get(i));
+                eventbus.herzhaft.add(entry);
+            }
+
+            return result;
+        }
+
+        protected void onPostExecute(String result) {
+            dialog.dismiss();
+        }
+    }
 
     public String heut;
 
-public void safeClicked(int id){
+    public void safeClicked(int id){
 
-    //clicked Süß etc die werden gespeichert in yesterday...
-    Calendar c = Calendar.getInstance();
-    int day = c.get(Calendar.DAY_OF_WEEK);
+        //clicked Süß etc die werden gespeichert in yesterday...
+        Calendar c = Calendar.getInstance();
+        int day = c.get(Calendar.DAY_OF_WEEK);
 
-    SharedPreferences prefs = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
+        SharedPreferences prefs = getActivity().getSharedPreferences("snackit", Context.MODE_PRIVATE);
 
-    if(prefs.getInt("currentDay",0)==day){
-        doneShit += id + ";";
-        prefs.edit().putString("yesterday",doneShit).apply();
-        doneShit = prefs.getString("yesterday",doneShit);
-        System.out.println("GEHE HIER REIN DAYOTHERDAY " + doneShit) ;
+        if(prefs.getInt("currentDay",0)==day){
+            doneShit += id + ";";
+            prefs.edit().putString("yesterday",doneShit).apply();
+            doneShit = prefs.getString("yesterday",doneShit);
+            System.out.println("GEHE HIER REIN DAYOTHERDAY " + doneShit) ;
+        }else{
 
-    }else{
-
+        }
+        System.out.println("doneShit :" + doneShit);
     }
-
-    System.out.println("doneShit :" + doneShit);
-}
-
-
 
     public void shownMeals(int id){
         doneShit += id + ";";
     }
 
-
-
     @Subscribe
     public void onEvent(EventTest event){
-        System.out.println("EVENTBUSS MAIN " + event.suess_Name.get(0));
+//        System.out.println("EVENTBUSS MAIN " + event.suess_Name.get(0));
     }
 
     @Subscribe
     public void onMessageEvent(EventTest event) {
-        System.out.println("EVENTBUSS MAIN " + event.suess_Name.get(0));
-
+//        System.out.println("EVENTBUSS MAIN " + event.suess_Name.get(0));
     }
 
-
     public boolean checkIf(){
-
         for(int i = 0; i <= 12;i++){
             if(s1.get(i)==false){
                 return false;
-
             }
             if(s2.get(i)==false){
                 return false;
@@ -728,18 +817,13 @@ public void safeClicked(int id){
                 return false;
             }
         }
-
         return true;
-
     }
 
 
 
     public void onStart() {
         super.onStart();
-//        if (checkDay() == false || eventbus.suess.size() == 0) {
-//            new MyAsyncTask().execute("");
-//        }
         EventBus.getDefault().register(this);
     }
 
@@ -756,92 +840,7 @@ public void safeClicked(int id){
     }
 
     public void clearArrays(){
-
-        eventbus.suess_ID.clear();
-        eventbus.suess_Name.clear();
-        eventbus.suess_Bild.clear();
-        eventbus.suess_Zutat1.clear();
-        eventbus.suess_Zutat1Anzahl.clear();
-        eventbus.suess_Zutat1Bild.clear();
-        eventbus.suess_Zutat2.clear();
-        eventbus.suess_Zutat2Anzahl.clear();
-        eventbus.suess_Zutat2Bild.clear();
-        eventbus.suess_Zutat3.clear();
-        eventbus.suess_Zutat3Anzahl.clear();
-        eventbus.suess_Zutat3Bild.clear();
-        eventbus.suess_Zutat4.clear();
-        eventbus.suess_Zutat4Anzahl.clear();
-        eventbus.suess_Zutat4Bild.clear();
-        eventbus.suess_Zutat5.clear();
-        eventbus.suess_Zutat5Anzahl.clear();
-        eventbus.suess_Zutat5Bild.clear();
-        eventbus.suess_Zubereitung.clear();
-
-
-        eventbus.suess_zwei_ID.clear();
-        eventbus.suess_zwei_Name.clear();
-        eventbus.suess_zwei_Bild.clear();
-        eventbus.suess_zwei_Zutat1.clear();
-        eventbus.suess_zwei_Zutat1Anzahl.clear();
-        eventbus.suess_zwei_Zutat1Bild.clear();
-        eventbus.suess_zwei_Zutat2.clear();
-        eventbus.suess_zwei_Zutat2Anzahl.clear();
-        eventbus.suess_zwei_Zutat2Bild.clear();
-        eventbus.suess_zwei_Zutat3.clear();
-        eventbus.suess_zwei_Zutat3Anzahl.clear();
-        eventbus.suess_zwei_Zutat3Bild.clear();
-        eventbus.suess_zwei_Zutat4.clear();
-        eventbus.suess_zwei_Zutat4Anzahl.clear();
-        eventbus.suess_zwei_Zutat4Bild.clear();
-        eventbus.suess_zwei_Zutat5.clear();
-        eventbus.suess_zwei_Zutat5Anzahl.clear();
-        eventbus.suess_zwei_Zutat5Bild.clear();
-        eventbus.suess_zwei_Zubereitung.clear();
-
-
-        eventbus.herzhaft_ID.clear();
-        eventbus.herzhaft_Name.clear();
-        eventbus.herzhaft_Bild.clear();
-        eventbus.herzhaft_Zutat1.clear();
-        eventbus.herzhaft_Zutat1Anzahl.clear();
-        eventbus.herzhaft_Zutat1Bild.clear();
-        eventbus.herzhaft_Zutat2.clear();
-        eventbus.herzhaft_Zutat2Anzahl.clear();
-        eventbus.herzhaft_Zutat2Bild.clear();
-        eventbus.herzhaft_Zutat3.clear();
-        eventbus.herzhaft_Zutat3Anzahl.clear();
-        eventbus.herzhaft_Zutat3Bild.clear();
-        eventbus.herzhaft_Zutat4.clear();
-        eventbus.herzhaft_Zutat4Anzahl.clear();
-        eventbus.herzhaft_Zutat4Bild.clear();
-        eventbus.herzhaft_Zutat5.clear();
-        eventbus.herzhaft_Zutat5Anzahl.clear();
-        eventbus.herzhaft_Zutat5Bild.clear();
-        eventbus.herzhaft_Zubereitung.clear();
-
-        eventbus.herzhaft_zwei_ID.clear();
-        eventbus.herzhaft_zwei_Name.clear();
-        eventbus.herzhaft_zwei_Bild.clear();
-        eventbus.herzhaft_zwei_Zutat1.clear();
-        eventbus.herzhaft_zwei_Zutat1Anzahl.clear();
-        eventbus.herzhaft_zwei_Zutat1Bild.clear();
-        eventbus.herzhaft_zwei_Zutat2.clear();
-        eventbus.herzhaft_zwei_Zutat2Anzahl.clear();
-        eventbus.herzhaft_zwei_Zutat2Bild.clear();
-        eventbus.herzhaft_zwei_Zutat3.clear();
-        eventbus.herzhaft_zwei_Zutat3Anzahl.clear();
-        eventbus.herzhaft_zwei_Zutat3Bild.clear();
-        eventbus.herzhaft_zwei_Zutat4.clear();
-        eventbus.herzhaft_zwei_Zutat4Anzahl.clear();
-        eventbus.herzhaft_zwei_Zutat4Bild.clear();
-        eventbus.herzhaft_zwei_Zutat5.clear();
-        eventbus.herzhaft_zwei_Zutat5Anzahl.clear();
-        eventbus.herzhaft_zwei_Zutat5Bild.clear();
-        eventbus.herzhaft_zwei_Zubereitung.clear();
+        suessIDs.clear();
+        herzhaftIDs.clear();
     }
-
 }
-
-
-
-
