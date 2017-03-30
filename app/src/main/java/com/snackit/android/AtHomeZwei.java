@@ -302,15 +302,12 @@ public class AtHomeZwei extends Fragment {
     }
 
     private String getLastString(String str) {
-        StringTokenizer str_tokenizer = new StringTokenizer(str, "::");
-        return str_tokenizer.nextToken();
+        String[] arr = str.split("::");
+        return arr[0];
     }
 
     private void initialize(CDAEntry entry) {
-//        if (snackit.herzhaft.size() == 0)
-//            return;
-//        CDAEntry entry = snackit.herzhaft.get(0);
-
+        disableViews();
         String title = entry.getField("title");
         txt_name.setText(getLastString(title));
 
@@ -356,11 +353,6 @@ public class AtHomeZwei extends Fragment {
                     .load(ingredient_second_image_url)
                     .override(250,250)
                     .into(img_zutat2);
-        } else {
-            l2.setVisibility(View.GONE);
-            l3.setVisibility(View.GONE);
-            l4.setVisibility(View.GONE);
-            l5.setVisibility(View.GONE);
         }
 
         if(ingredients.size() >2) {
@@ -380,10 +372,6 @@ public class AtHomeZwei extends Fragment {
                     .load(ingredient_third_image_url)
                     .override(250,250)
                     .into(img_zutat3);
-        } else {
-            l3.setVisibility(View.GONE);
-            l4.setVisibility(View.GONE);
-            l5.setVisibility(View.GONE);
         }
 
         if (ingredients.size() >3) {
@@ -403,9 +391,6 @@ public class AtHomeZwei extends Fragment {
                     .load(ingredient_forth_image_url)
                     .override(250,250)
                     .into(img_zutat4);
-        } else {
-            l4.setVisibility(View.GONE);
-            l5.setVisibility(View.GONE);
         }
 
         if (ingredients.size() >4) {
@@ -425,8 +410,6 @@ public class AtHomeZwei extends Fragment {
                     .load(ingredient_fifth_image_url)
                     .override(250,250)
                     .into(img_zutat5);
-        } else {
-            l5.setVisibility(View.GONE);
         }
 
 //        //Set Tutorial
@@ -444,11 +427,6 @@ public class AtHomeZwei extends Fragment {
             txtzubereitung2.setVisibility(View.VISIBLE);
             txtzubereitung2.setText(tutorialList[1].substring(3));
             txtzubereitung2.setTypeface(displayMedium);
-        } else {
-            zb2.setVisibility(View.GONE);
-            zb3.setVisibility(View.GONE);
-            zb4.setVisibility(View.GONE);
-            zb5.setVisibility(View.GONE);
         }
 
         if (tutorialList.length > 2) {
@@ -456,10 +434,6 @@ public class AtHomeZwei extends Fragment {
             txtzubereitung3.setVisibility(View.VISIBLE);
             txtzubereitung3.setText(tutorialList[2].substring(3));
             txtzubereitung3.setTypeface(displayMedium);
-        } else {
-            zb3.setVisibility(View.GONE);
-            zb4.setVisibility(View.GONE);
-            zb5.setVisibility(View.GONE);
         }
 
         if (tutorialList.length > 3) {
@@ -467,9 +441,6 @@ public class AtHomeZwei extends Fragment {
             txtzubereitung4.setVisibility(View.VISIBLE);
             txtzubereitung4.setText(tutorialList[3].substring(3));
             txtzubereitung4.setTypeface(displayMedium);
-        } else {
-            zb4.setVisibility(View.GONE);
-            zb5.setVisibility(View.GONE);
         }
 
         if (tutorialList.length > 4) {
@@ -477,9 +448,25 @@ public class AtHomeZwei extends Fragment {
             txtzubereitung5.setVisibility(View.VISIBLE);
             txtzubereitung5.setText(tutorialList[4].substring(3));
             txtzubereitung5.setTypeface(displayMedium);
-        }else {
-            zb5.setVisibility(View.GONE);
         }
+    }
+
+    private void disableViews() {
+        l1.setVisibility(View.GONE);
+        l2.setVisibility(View.GONE);
+        l3.setVisibility(View.GONE);
+        l4.setVisibility(View.GONE);
+        l5.setVisibility(View.GONE);
+        zb1.setVisibility(View.GONE);
+        zb2.setVisibility(View.GONE);
+        zb3.setVisibility(View.GONE);
+        zb4.setVisibility(View.GONE);
+        zb5.setVisibility(View.GONE);
+        txtzubereitung1.setVisibility(View.GONE);
+        txtzubereitung2.setVisibility(View.GONE);
+        txtzubereitung3.setVisibility(View.GONE);
+        txtzubereitung4.setVisibility(View.GONE);
+        txtzubereitung5.setVisibility(View.GONE);
     }
 
     public int num;

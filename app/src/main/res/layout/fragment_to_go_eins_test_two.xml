@@ -51,6 +51,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
                 android:src="@drawable/no_image"
+                android:layout_above="@+id/imageView7"
                 />
 
             <!--
